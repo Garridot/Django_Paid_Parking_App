@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <label for="">License Plate</label>
+    <input type="text" name="license_plate">
+    <input type="submit" value="Create Ticket" >
+
+</form>
+{% endblock %}
