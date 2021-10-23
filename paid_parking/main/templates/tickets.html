@@ -1,6 +1,43 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<style>
+.container-fluid{
+width: 90%;
+margin: auto;
+}
+.container-fluid .title{
+border-bottom: 1px solid #d9dadc;
+padding: 25px 0 10px;
+margin-bottom: 10px;
+}
+a{
+background: #AAA4AC;
+margin: 1rem 0;
+padding: .1rem .5rem;
+text-decoration: none;
+color: white;
+border-bottom: 1px solid #e1e1e2;
+}
+a:hover{
+color: white;
+background: #cecccf;
+}
+table{
+margin: 2rem 0;
+}
+button{
+border: none;
+}
+button a{
+background: #212529;
+color: white;
+}
+button a:hover{
+  background: #414952;
+}
+</style>
+
 <div class="container-fluid">
   <div class="title">
     <h3>Paid Parking App</h3>
@@ -30,7 +67,7 @@
         <td>{{ticket.time_spent}}</td>
         <td>$ {{ticket.total_due}}</td>
         {% if ticket.checkout_time == None  %}        
-          <td><button><a href="{% url 'ticket_out' ticket.id %}">a</a></button></td>
+          <td><button><a href="{% url 'ticket_out' ticket.id %}">Finish</a></button></td>
         {% endif %}  
       </tr> 
     {% endfor %}     
